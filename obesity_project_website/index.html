@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=National+Park:wght@200..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
-    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
     <header>
@@ -17,65 +17,416 @@
         </div>
     </header>
 
+    <nav class="navigation">
+        <div class="container">
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#key-findings">Key Findings</a></li>
+                <li><a href="#geographic">Geographic Analysis</a></li>
+                <li><a href="#comparative">Comparative Analysis</a></li>
+                <li><a href="#trends">Distribution Analysis</a></li>
+                <li><a href="#methodology">Methodology</a></li>
+                <li><a href="#dataset">Dataset</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <section class="intro">
+        <section id="introduction" class="intro">
             <div class="divider"></div>
             <p>
-                Analysis includes obesity rates of all 50 states, Washington D.C., & Puerto Rico. This analysis is
-                meant to highlight the obesity rates in different states & territories of the United States and how 
-                they differ. The analysis is based on the data from Data.gov - a repository of government data of all
-                types (local, state, & federal). All analysis, charts, data narrative, and website was made by Peter Graham.
+                This comprehensive analysis examines obesity rates across all 50 states, Washington D.C., and Puerto Rico, 
+                highlighting the significant variations between different regions and states. The analysis is based on data 
+                from Data.gov - a repository of government data of all types (local, state, and federal).
+            </p>
+            <p>
+                Through detailed visualizations, we explore the geographic distribution of obesity, compare states with the 
+                highest and lowest rates, and analyze the overall distribution pattern. These insights help understand the 
+                complex factors contributing to obesity rates across the United States.
+            </p>
+            <p>
+                All analysis, charts, data narrative, and website design were created by Peter Graham.
             </p>
         </section>
 
-        <section class="data-section">
+        <section id="key-findings" class="data-section">
             <h2>Key Findings</h2>
+            <div class="highlight-box">
+                <p>Analysis reveals distinct regional patterns in obesity rates, with certain regions showing significantly higher prevalence than others. There appears to be a correlation between political leaning and obesity rates, with more liberal states generally showing lower obesity rates compared to conservative counterparts.</p>
+            </div>
+            
+            <div class="methodology">
+                <h3>Research Questions</h3>
+                <p>This analysis sought to answer the following questions:</p>
+                <ul class="factor-list">
+                    <li>How do obesity rates vary geographically across the United States?</li>
+                    <li>What patterns emerge when comparing obesity rates between states?</li>
+                    <li>Is there a correlation between political leanings and obesity rates?</li>
+                    <li>What is the national average obesity rate and how do states compare to this benchmark?</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="geographic" class="data-section">
             <h3>Geographic Distribution of Obesity</h3>
-            <img src="images/Rplot_1.png" alt="Geographic distribution of obesity rates across the United States">
-            <p>
-                This visualization shows the geographic distribution of obesity rates across different states and territories.
-                Regional patterns in obesity prevalence can be clearly observed - many more Liberal states tend to have a lower
-                obesity rate than their Conservative counterparts.
-            </p>
+            <div class="image-container">
+                <img src="images/Rplot_1.png" alt="Obesity Rates by State and Region: CO to LA">
+                <p class="caption">Figure 1: Obesity Rates by State and Region, arranged from lowest (CO) to highest (LA)</p>
+            </div>
+            
+            <div class="map-legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #FFFF99;"></div>
+                    <div class="legend-label">20%</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #FFD380;"></div>
+                    <div class="legend-label">24%</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #FF9955;"></div>
+                    <div class="legend-label">28%</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #FF5533;"></div>
+                    <div class="legend-label">32%</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background-color: #990066;"></div>
+                    <div class="legend-label">36%</div>
+                </div>
+            </div>
+            
+            <div class="narrative">
+                <p>
+                    The geographic distribution of obesity rates reveals clear regional patterns across the United States. 
+                    As shown in the visualization, states are arranged by obesity rate within their respective regions 
+                    (West, South, Northeast, and Midwest), with colors ranging from light yellow (lowest rates) to dark purple 
+                    (highest rates).
+                </p>
+                <p>
+                    This regional analysis demonstrates that the West and Northeast regions generally have lower obesity rates, 
+                    while the South and Midwest tend to have higher rates. Colorado consistently shows the lowest obesity rate 
+                    nationwide at approximately 20%, while Louisiana has among the highest at approximately 36%.
+                </p>
+                <p>
+                    The visualization also highlights that within each region, there can be significant variations in obesity rates. 
+                    For example, while many Southern states have high obesity rates (appearing as dark purple), some states in the 
+                    South have moderate rates. Similarly, the Midwest shows a range of obesity prevalence across states.
+                </p>
+            </div>
         </section>
 
-        <section class="data-section">
+        <section id="comparative" class="data-section">
             <h3>Comparative Analysis</h3>
-            <img src="images/Rplot_2.png" alt="Comparative analysis of obesity rates">
-            <p>
-                This chart compares obesity rates across different demographic factors, highlighting significant variations
-                between regions in regards to obesity rates in adult populations. We can see from this chart that even within
-                the adult populations, although some states might differ in placement, the more Liberal states still tend to
-                have a lower rate of obesity when compared to their Conservative counterparts.
-            </p>
+            <div class="image-container">
+                <img src="images/Rplot_2.png" alt="States with Highest (LA) and Lowest (CO) Obesity Rates">
+                <p class="caption">Figure 2: Top and bottom 10 states by percentage of adult population with obesity</p>
+            </div>
+            
+            <div class="narrative">
+                <p>
+                    This comparative analysis highlights the stark contrast between states with the highest and lowest obesity 
+                    rates in the United States. As shown in the visualization, Louisiana leads the states with the highest 
+                    obesity rates, while Colorado has the lowest rate in the country.
+                </p>
+                <p>
+                    The data reveals a significant disparity between these two groups. States with the highest rates (shown in red) 
+                    are predominantly located in the South and Midwest, while states with the lowest rates (shown in blue) tend to 
+                    be located on the coasts and in the Northeast.
+                </p>
+                
+                <div class="two-column">
+                    <div class="column">
+                        <h4>States with Highest Obesity Rates</h4>
+                        <table>
+                            <tr>
+                                <th>Rank</th>
+                                <th>State</th>
+                                <th>Obesity Rate</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Louisiana</td>
+                                <td>~36%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>West Virginia</td>
+                                <td>~36%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Mississippi</td>
+                                <td>~35%</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Alabama</td>
+                                <td>~35%</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Kentucky</td>
+                                <td>~34%</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Arkansas</td>
+                                <td>~34%</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Kansas</td>
+                                <td>~33%</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>Oklahoma</td>
+                                <td>~33%</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Tennessee</td>
+                                <td>~33%</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Texas</td>
+                                <td>~32%</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="column">
+                        <h4>States with Lowest Obesity Rates</h4>
+                        <table>
+                            <tr>
+                                <th>Rank</th>
+                                <th>State</th>
+                                <th>Obesity Rate</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Colorado</td>
+                                <td>~19%</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>District of Columbia</td>
+                                <td>~21%</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Hawaii</td>
+                                <td>~21%</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Montana</td>
+                                <td>~22%</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>California</td>
+                                <td>~22%</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>Massachusetts</td>
+                                <td>~22%</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Utah</td>
+                                <td>~23%</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>New York</td>
+                                <td>~23%</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>Vermont</td>
+                                <td>~23%</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Connecticut</td>
+                                <td>~23%</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <section class="data-section">
-            <h3>Trend Analysis</h3>
-            <img src="images/Rplot_3.png" alt="Trend analysis of obesity rates over time">
-            <p>
-                This analysis examines obesity rates between states and finds a national average of 29.3%. Based on trend line 
-                within the histogram, one can see that the peak of the trend line is above 30%. This is a call to awareness in
-                regards to obesity in America, with the rate only going up over time.
-            </p>
+        <section id="trends" class="data-section">
+            <h3>Distribution Analysis</h3>
+            <div class="image-container">
+                <img src="images/Rplot_3.png" alt="Distribution of Obesity Rates Across States: Mean of 29.3%">
+                <p class="caption">Figure 3: Histogram showing the distribution of obesity rates across states with density curve and mean indicator</p>
+            </div>
+            
+            <div class="narrative">
+                <p>
+                    This analysis examines the distribution of obesity rates across all states and territories, revealing 
+                    a national average of 29.3%. As shown in the histogram with density curve, the distribution of obesity rates 
+                    across states ranges from approximately 15% to 40%.
+                </p>
+                <p>
+                    The red vertical dashed line indicates the mean obesity rate of 29.3%, with the density curve showing 
+                    that a significant number of states have obesity rates exceeding this threshold. The histogram shows 
+                    a bimodal distribution with peaks around 25-27% and 29-31%, suggesting two potential clusters of states.
+                </p>
+                <p>
+                    The distribution shows a slight rightward skew, indicating that while there are several states with 
+                    relatively low obesity rates, many states cluster around or above the national average. This analysis serves 
+                    as a call to awareness regarding obesity in America, highlighting that the majority of states have obesity 
+                    rates of 25% or higher.
+                </p>
+                <p>
+                    The disparity between the highest and lowest state obesity rates - a difference of approximately 20 percentage points - highlights 
+                    the significant regional variations in this public health concern and suggests the influence of diverse factors including 
+                    socioeconomic conditions, food environments/deserts, physical activity opportunities, and policy approaches.
+                </p>
+            </div>
         </section>
 
-        <section class="data-section">
+        <section id="methodology" class="data-section">
+            <h2>Methodology</h2>
+            <p>This analysis was conducted using data from the National Obesity By State dataset available on Data.gov. The methodology involved the following steps:</p>
+            
+            <div class="methodology-steps">
+                <div class="methodology-step">
+                    <h4>Data Collection</h4>
+                    <p>The dataset was obtained from the official Data.gov repository, which includes comprehensive obesity statistics for all 50 states, Washington D.C., and Puerto Rico.</p>
+                </div>
+                <div class="methodology-step">
+                    <h4>Data Cleaning and Preparation</h4>
+                    <p>The raw data was cleaned to ensure consistency and accuracy. Missing values were addressed, and data formats were standardized for analysis.</p>
+                </div>
+                <div class="methodology-step">
+                    <h4>Analysis Techniques</h4>
+                    <p>Statistical analysis was performed using R to calculate descriptive statistics, identify patterns, and visualize the data. Geographic analysis was conducted to map obesity rates across regions.</p>
+                </div>
+                <div class="methodology-step">
+                    <h4>Visualization Creation</h4>
+                    <p>Data visualizations were created using R's plotting capabilities, with emphasis on clarity and informative representation of the findings.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="dataset" class="data-section">
             <h2>Dataset Source</h2>
-            <p>This analysis uses data from the National Obesity By State dataset available on Data.gov. 
-               <a href="https://catalog.data.gov/dataset/national-obesity-by-state-d765a" target="_blank">
-                   Access the complete dataset here
-               </a>.
+            <p>
+                This analysis uses data from the National Obesity By State dataset available on Data.gov. The dataset 
+                provides comprehensive obesity statistics for all U.S. states and territories, offering a robust foundation 
+                for analyzing geographic and demographic patterns in obesity prevalence.
             </p>
+            <p>
+                <a href="https://catalog.data.gov/dataset/national-obesity-by-state-d765a" target="_blank">
+                    Access the complete dataset here
+                </a>
+            </p>
+            <p>
+                For those interested in conducting their own analysis, the dataset includes variables such as state name, 
+                obesity rates, confidence intervals, and associated metadata. This publicly available resource enables 
+                transparent verification of the findings presented in this analysis.
+            </p>
+            
+            <a href="#introduction" class="btn">Back to Introduction</a>
+        </section>
+
+        <section class="about-author">
+            <div class="author-info">
+                <h3>About the Author</h3>
+                <p>
+                    This analysis and website were created by Peter Graham, a student @Brown. 
+                    All charts, data narratives, and visualizations were developed to provide a clear and accessible understanding 
+                    of obesity trends across the United States.
+                </p>
+                <p>
+                    For questions or further information about this analysis, please contact peter_graham@brown.edu.
+                </p>
+            </div>
         </section>
     </div>
 
     <footer>
         <div class="container">
-            <p>© 2025 U.S. Obesity Rate Analysis | Data sourced from Data.gov</p>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About This Analysis</h3>
+                    <p>This analysis examines obesity rates across the United States, providing insights into geographic distribution and trends. All data is sourced from official government repositories.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>For questions regarding this analysis or to request additional information, please contact Peter Graham.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Data Source</h3>
+                    <p>All data used in this analysis was obtained from Data.gov, the official U.S. government data repository.</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 U.S. Obesity Rate Analysis | Data sourced from Data.gov</p>
+            </div>
         </div>
     </footer>
-    <script src="scripts/scatter.js"></script>
-    <div id = "myChart"></div>
+
+    <a href="#" class="scroll-top" title="Back to Top">↑</a>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                    return;
+                }
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Show/hide scroll to top button
+        window.addEventListener('scroll', function() {
+            const scrollTopButton = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTopButton.style.display = 'flex';
+            } else {
+                scrollTopButton.style.display = 'none';
+            }
+        });
+        
+        // Initialize with scroll button hidden
+        document.querySelector('.scroll-top').style.display = 'none';
+        
+        // Add interactive elements to images
+        document.querySelectorAll('.image-container img').forEach(img => {
+            img.addEventListener('click', function() {
+                if (this.classList.contains('expanded')) {
+                    this.classList.remove('expanded');
+                    this.style.cursor = 'zoom-in';
+                } else {
+                    this.classList.add('expanded');
+                    this.style.cursor = 'zoom-out';
+                }
+            });
+            img.style.cursor = 'zoom-in';
+        });
+    </script>
 </body>
 </html>
