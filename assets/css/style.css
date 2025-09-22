@@ -58,6 +58,15 @@ footer {
     font-size: 0.9rem;
 }
 
+.header-top {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-links {
+    margin-top: 1rem;
+}
+
 /* Navigation */
 nav {
     margin: 1rem 0;
@@ -73,22 +82,27 @@ nav a {
     margin-top: 2rem;
 }
 
-/* Unified arrow list style for all sections */
 .arrow-list {
-    list-style: none;          /* remove default bullets */
-    padding-left: 1.8rem;      /* space for arrow */
+    list-style: none;
+    padding-left: 0;
 }
 
 .arrow-list li {
     position: relative;
     margin-bottom: 0.5rem;
+    padding-left: 1.8rem;
 }
 
 .arrow-list li::before {
-    content: "→";              /* arrow */
+    content: "→";
     position: absolute;
     left: 0;
     color: #7B8FA8;
+}
+
+/* Post list (for blog index) */
+.post-list li {
+    margin-bottom: 0.5rem;
 }
 
 /* Blog post specific styles */
