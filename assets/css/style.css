@@ -58,15 +58,6 @@ footer {
     font-size: 0.9rem;
 }
 
-.header-top {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.header-links {
-    margin-top: 1rem;
-}
-
 /* Navigation */
 nav {
     margin: 1rem 0;
@@ -78,33 +69,26 @@ nav a {
 }
 
 /* Sections */
-.interests, .background, .featured-posts {
+.interests, .background, .featured-posts, .currently {
     margin-top: 2rem;
 }
 
-.interests ul, .background ul, .featured-posts ul {
-    list-style: none;
-    padding-left: 0;
+/* Unified arrow list style for all sections */
+.arrow-list {
+    list-style: none;          /* remove default bullets */
+    padding-left: 1.8rem;      /* space for arrow */
 }
 
-.interests li, .background li, .featured-posts li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.8rem;
+.arrow-list li {
     position: relative;
+    margin-bottom: 0.5rem;
 }
 
-.interests li::before, 
-.background li::before, 
-.featured-posts li::before, 
-.currently li::before {
-    content: "→";
+.arrow-list li::before {
+    content: "→";              /* arrow */
     position: absolute;
     left: 0;
     color: #7B8FA8;
-}
-
-.post-list li {
-    margin-bottom: 0.5rem;
 }
 
 /* Blog post specific styles */
