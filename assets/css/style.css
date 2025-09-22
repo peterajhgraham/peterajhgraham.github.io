@@ -67,15 +67,6 @@ footer {
     margin-top: 1rem;
 }
 
-.header-links a {
-    display: inline-block;
-    margin: 0 0.5rem;
-    padding: 0.5rem 1rem;
-    border: 1px solid #3B5998;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
 /* Navigation */
 nav {
     margin: 1rem 0;
