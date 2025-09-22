@@ -93,7 +93,7 @@ nav a {
     position: relative;
 }
 
-.interests li::before, .background li::before, .featured-posts li::before {
+.interests li::before, .background li::before, .featured-posts li::before, .currently li::before {
     content: "→";
     position: absolute;
     left: 0;
