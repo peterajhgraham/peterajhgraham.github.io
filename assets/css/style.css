@@ -1,0 +1,154 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography & Colors */
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #1D3C66;
+    background: #E6F0FA;
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+    color: #1D3C66;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+/* Links */
+a {
+    color: #3B5998;
+    text-decoration: none;
+}
+
+/* External links in blog posts */
+.blog-post a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 0.8em;
+    color: #7B8FA8;
+}
+
+/* Header & Footer */
+header, footer {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+footer {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    color: #7B8FA8;
+    font-size: 0.9rem;
+}
+
+.header-top {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header-links {
+    margin-top: 1rem;
+}
+
+.header-links a {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #3B5998;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Navigation */
+nav {
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+
+nav a {
+    color: #7B8FA8;
+}
+
+/* Sections */
+.interests, .background, .featured-posts {
+    margin-top: 2rem;
+}
+
+.interests ul, .background ul, .featured-posts ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.interests li, .background li, .featured-posts li {
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.interests li::before, .background li::before, .featured-posts li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #7B8FA8;
+}
+
+.post-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Blog post specific styles */
+.blog-post {
+    line-height: 1.7;
+}
+
+.blog-post section {
+    margin-bottom: 3rem;
+}
+
+.blog-post p {
+    margin-bottom: 1rem;
+}
+
+.post-date {
+    color: #7B8FA8;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    body {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .header-links a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+}
