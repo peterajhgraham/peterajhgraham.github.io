@@ -18,6 +18,7 @@
         <a href="blog/index.html">Blog</a>
     </nav>
 </header>
+
 <main>
     <section class="interests">
         <h2>Interests</h2>
@@ -29,23 +30,35 @@
             <li>Startups & Investing</li>
         </ul>
     </section>
+
     <section class="background">
         <h2>Background</h2>
         <ul class="arrow-list">
-            <li>Made $$$ Founding & Operating Companies in High School</li>
-            <li>Computational Neuroscience Research @ Brown</li>
-            <li>Data Scientist for Neurosurgery @ Brown Med School</li>
-            <li>Product Manager for the Neuralace BCI @ Blackrock Neurotech</li>
-            <li>Deployment Strategy @ Palantir</li>
-            <li>Founder & CEO @ Spiral Works</li>
+            <li>Made $$$ <strong>Founding & Operating Companies</strong> in High School</li>
+            <li><strong>Computational Neuroscience Research</strong> @ Brown</li>
+            <li><strong>Data Scientist</strong> for Neurosurgery @ Brown Med School</li>
+            <li><strong>Product Manager</strong> for the Neuralace BCI @ Blackrock Neurotech</li>
+            <li><strong>Deployment Lead</strong> @ Palantir</li>
+            <li><strong>Founder & CEO</strong> @ Spiral Works</li>
         </ul>
     </section>
+
     <section class="currently">
         <h2>Currently</h2>
         <ul class="arrow-list">
-            <li>Learning, Connecting, & Investing</li>
+            <li>Learning, Connecting, & Investing in AI</li>
         </ul>
     </section>
 </main>
+    
+<div class="cursor"></div>
+    
+<script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+</script>
 </body>
 </html>
