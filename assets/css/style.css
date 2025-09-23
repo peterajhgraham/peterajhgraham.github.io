@@ -108,6 +108,19 @@ nav a {
     font-weight: normal;
 }
 
+/* Make links more visible */
+a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+    color: #104e8b;
+    text-decoration: underline;
+}
+
 /* Responsive design */
 @media (max-width: 600px) {
     body {
