@@ -19,5 +19,15 @@
             <li><a href="posts/the_psychology_of_paradigm_shifters.html">The Psychology of Paradigm Shifters</a> - Sep 8, 2025</li>
         </ul>
     </main>
+
+    <div class="cursor"></div>
+<script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+</script>
+
 </body>
 </html>
