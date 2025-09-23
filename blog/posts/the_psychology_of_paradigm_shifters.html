@@ -118,5 +118,15 @@
             <p>That <a href="https://en.wikipedia.org/wiki/Risk_perception" target="_blank">willingness</a> is rarer than genius. And more necessary than we like to admit.</p>
         </section>
     </main>
+
+    <div class="cursor"></div>
+<script>
+    const cursor = document.querySelector('.cursor');
+    document.addEventListener('mousemove', e => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+</script>
+    
 </body>
 </html>
