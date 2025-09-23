@@ -3,6 +3,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
+}
+
+/* Custom cursor */
+.cursor {
+    width: 12px;
+    height: 12px;
+    background: rgba(61, 102, 148, 0.8);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease, background 0.2s ease;
+    z-index: 9999;
+}
+
+/* Cursor hover effect for links */
+a:hover ~ .cursor,
+a:hover + .cursor {
+    transform: translate(-50%, -50%) scale(1.8);
+    background: rgba(61, 102, 148, 0.5);
 }
 
 /* Typography & Colors */
@@ -38,13 +59,6 @@ a {
     text-decoration: none;
 }
 
-/* External links in blog posts */
-.blog-post a[target="_blank"]::after {
-    content: " ↗";
-    font-size: 0.8em;
-    color: #7B8FA8;
-}
-
 /* Header & Footer */
 header, footer {
     text-align: center;
@@ -58,15 +72,6 @@ footer {
     font-size: 0.9rem;
 }
 
-.header-top {
-    text-align: center;
-    margin-bottom: 3rem;
-}
-
-.header-links {
-    margin-top: 1rem;
-}
-
 /* Navigation */
 nav {
     margin: 1rem 0;
@@ -78,50 +83,29 @@ nav a {
 }
 
 /* Sections */
-.interests, .background, .featured-posts, .currently {
+.interests, .background, .currently {
     margin-top: 2rem;
 }
 
-.arrow-list {
+.interests ul, .background ul, .currently ul {
     list-style: none;
     padding-left: 0;
 }
 
-.arrow-list li {
-    position: relative;
+.interests li, .background li, .currently li {
     margin-bottom: 0.5rem;
-    padding-left: 1.8rem;
+    padding-left: 2rem;
+    position: relative;
 }
 
-.arrow-list li::before {
+.interests li::before, 
+.background li::before, 
+.currently li::before {
     content: "→";
     position: absolute;
     left: 0;
     color: #7B8FA8;
-}
-
-/* Post list (for blog index) */
-.post-list li {
-    margin-bottom: 0.5rem;
-}
-
-/* Blog post specific styles */
-.blog-post {
-    line-height: 1.7;
-}
-
-.blog-post section {
-    margin-bottom: 3rem;
-}
-
-.blog-post p {
-    margin-bottom: 1rem;
-}
-
-.post-date {
-    color: #7B8FA8;
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
+    font-weight: normal;
 }
 
 /* Responsive design */
@@ -139,7 +123,7 @@ nav a {
         font-size: 1.5rem;
     }
     
-    .header-links a {
+    nav a {
         display: block;
         margin: 0.5rem 0;
     }
