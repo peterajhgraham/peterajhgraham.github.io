@@ -55,8 +55,15 @@ h2 {
 
 /* Links */
 a {
-    color: #3B5998;
+    color: #1e90ff;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+a:hover {
+    color: #104e8b;
+    text-decoration: underline;
 }
 
 /* Header & Footer */
@@ -87,12 +94,15 @@ nav a {
     margin-top: 2rem;
 }
 
-.interests ul, .background ul, .currently ul {
+/* Arrowed lists for homepage sections */
+.interests ul, .background ul, .currently ul,
+.arrow-list {
     list-style: none;
     padding-left: 0;
 }
 
-.interests li, .background li, .currently li {
+.interests li, .background li, .currently li,
+.arrow-list li {
     margin-bottom: 0.5rem;
     padding-left: 2rem;
     position: relative;
@@ -100,25 +110,13 @@ nav a {
 
 .interests li::before, 
 .background li::before, 
-.currently li::before {
+.currently li::before,
+.arrow-list li::before {
     content: "→";
     position: absolute;
     left: 0;
     color: #7B8FA8;
     font-weight: normal;
-}
-
-/* Make links more visible */
-a {
-    color: #1e90ff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
-}
-
-a:hover {
-    color: #104e8b;
-    text-decoration: underline;
 }
 
 /* Responsive design */
