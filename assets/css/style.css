@@ -81,7 +81,7 @@ nav a {
     margin: 0 0.5rem;
 }
 /* Section Spacing */
-section {
+.background, .interests {
     margin-top: 2rem;
 }
 /* Arrowed lists */
@@ -113,12 +113,11 @@ section {
     align-items: flex-start;
     justify-content: space-between;
     gap: 4rem;
-    margin-top: 0;
-    padding: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
 }
 .me-text {
     flex: 1;
-    padding-top: 2rem;
 }
 
 .me-text h2 {
@@ -161,8 +160,8 @@ section {
 @media (max-width: 768px) {
     .me-section {
         flex-direction: column;
-        min-height: auto;
-        padding: 0;
+        margin-top: 1rem;
+        margin-bottom: 0;
         gap: 2rem;
     }
     
@@ -203,5 +202,6 @@ section {
     
     .me-section {
         padding: 0;
+        margin-bottom: 0;
     }
 }
