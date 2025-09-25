@@ -33,7 +33,7 @@ body {
     color: #1D3C66;
     background: #E6F0FA;
     padding: 2rem;
-    max-width: 1200px;
+    max-width: 1400px; /* wider layout */
     margin: auto;
 }
 
@@ -90,28 +90,32 @@ nav a {
 }
 
 /* Sections */
-.interests, .background, .currently {
+.currently, .background, .interests {
     margin-top: 2rem;
 }
 
 /* Arrowed lists for homepage sections */
-.interests ul, .background ul, .currently ul,
-.arrow-list {
+.arrow-list,
+.currently ul,
+.background ul,
+.interests ul {
     list-style: none;
     padding-left: 0;
 }
 
-.interests li, .background li, .currently li,
-.arrow-list li {
+.arrow-list li,
+.currently li,
+.background li,
+.interests li {
     margin-bottom: 0.5rem;
     padding-left: 2rem;
     position: relative;
 }
 
-.interests li::before, 
-.background li::before, 
+.arrow-list li::before,
 .currently li::before,
-.arrow-list li::before {
+.background li::before,
+.interests li::before {
     content: "→";
     position: absolute;
     left: 0;
@@ -119,37 +123,58 @@ nav a {
     font-weight: normal;
 }
 
-/* Pictures & images */
-.currently-content {
+/* Me section layout: text left, image right */
+.me-section {
     display: flex;
-    align-items: center; /* vertically center image and text */
-    gap: 2rem; /* space between text and image */
-    flex-wrap: wrap; /* responsive: stacks on smaller screens */
+    align-items: center; /* vertically center */
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap; /* stack on smaller screens */
+}
+
+.me-text {
+    flex: 1; /* text takes remaining space */
+}
+
+.me-image {
+    flex-shrink: 0; /* image doesn't shrink */
 }
 
 .profile-image {
-    width: 200px; /* adjust size as needed */
-    max-width: 100%;
+    max-width: 350px; /* bigger image */
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 /* Responsive design */
+@media (max-width: 768px) {
+    .me-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .profile-image {
+        max-width: 100%;
+        margin-top: 1rem;
+    }
+}
+
 @media (max-width: 600px) {
     body {
         padding: 1rem;
         font-size: 0.9rem;
     }
-    
+
     h1 {
         font-size: 2rem;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
-    
+
     nav a {
         display: block;
         margin: 0.5rem 0;
