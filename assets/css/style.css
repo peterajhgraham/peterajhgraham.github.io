@@ -124,13 +124,13 @@ section {
     font-weight: normal;
 }
 
-/* Me section: text left, image right, vertically centered */
+/* Me section: */
 .me-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 3rem;
-    min-height: 60vh;
+    padding: 2rem 0;
 }
 
 .me-text {
