@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset & Box Sizing */
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +10,7 @@
 .cursor {
     width: 12px;
     height: 12px;
-    background: rgba(61, 102, 148, 0.8);
+    background: rgba(61, 102, 148, 0.85);
     border-radius: 50%;
     position: fixed;
     pointer-events: none;
@@ -19,38 +19,40 @@
     z-index: 9999;
 }
 
-/* Cursor hover effect for links */
 a:hover ~ .cursor,
 a:hover + .cursor {
     transform: translate(-50%, -50%) scale(1.8);
-    background: rgba(61, 102, 148, 0.5);
+    background: rgba(61, 102, 148, 0.6);
 }
 
-/* Typography & Colors */
+/* Typography & Base Colors */
 body {
     font-family: 'Georgia', serif;
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.7;
     color: #1D3C66;
-    background: #E6F0FA;
-    padding: 2rem;
-    max-width: 1400px; /* wider layout */
-    margin: auto;
+    background: #F4F6F9;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 3rem;
+    transition: all 0.3s ease;
 }
 
 h1, h2 {
-    margin-bottom: 1rem;
     color: #1D3C66;
     font-weight: 600;
+    line-height: 1.2;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
 }
 
 h2 {
-    font-size: 2rem;
-    margin-top: 2rem;
+    font-size: 2.2rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 /* Links */
@@ -66,35 +68,33 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Header & Footer */
-header, footer {
+/* Header & Navigation */
+header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
-footer {
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-    color: #7B8FA8;
-    font-size: 0.9rem;
-}
-
-/* Navigation */
 nav {
-    margin: 1rem 0;
-    font-size: 0.9rem;
+    margin-top: 0.75rem;
+    font-size: 0.95rem;
 }
 
 nav a {
     color: #7B8FA8;
+    margin: 0 0.75rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover {
+    color: #1e90ff;
 }
 
 /* Sections */
-.currently, .background, .interests {
-    margin-top: 2rem;
+section {
+    margin-top: 3rem;
 }
 
-/* Arrowed lists for homepage sections */
+/* Arrowed Lists */
 .arrow-list,
 .currently ul,
 .background ul,
@@ -107,9 +107,10 @@ nav a {
 .currently li,
 .background li,
 .interests li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     padding-left: 2rem;
     position: relative;
+    font-size: 1.05rem;
 }
 
 .arrow-list li::before,
@@ -121,34 +122,64 @@ nav a {
     left: 0;
     color: #7B8FA8;
     font-weight: normal;
+    font-size: 1.1rem;
 }
 
-/* Me section layout: text left, image right */
+/* Me Section: Image Right, Text Left */
 .me-section {
     display: flex;
-    align-items: center; /* vertically center */
+    align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 3rem;
     margin-top: 2rem;
-    flex-wrap: wrap; /* stack on smaller screens */
+    flex-wrap: wrap;
 }
 
 .me-text {
-    flex: 1; /* text takes remaining space */
+    flex: 1;
 }
 
 .me-image {
-    flex-shrink: 0; /* image doesn't shrink */
+    flex-shrink: 0;
 }
 
 .profile-image {
-    max-width: 350px; /* bigger image */
+    max-width: 400px;
+    width: 100%;
     height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsive design */
+.profile-image:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    body {
+        padding: 2rem;
+    }
+
+    h1 {
+        font-size: 2.4rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .me-section {
+        gap: 2rem;
+    }
+
+    .profile-image {
+        max-width: 300px;
+    }
+}
+
 @media (max-width: 768px) {
     .me-section {
         flex-direction: column;
@@ -167,16 +198,31 @@ nav a {
         font-size: 0.9rem;
     }
 
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
     h1 {
         font-size: 2rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     }
+}
 
-    nav a {
-        display: block;
-        margin: 0.5rem 0;
-    }
+/* Miscellaneous Improvements */
+ul {
+    line-height: 1.8;
+}
+
+section h2 {
+    border-bottom: 2px solid #D1D9E6;
+    padding-bottom: 0.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.currently, .background, .interests {
+    padding: 1rem 0;
 }
