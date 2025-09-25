@@ -5,7 +5,6 @@
     box-sizing: border-box;
     cursor: none;
 }
-
 /* Custom cursor */
 .cursor {
     width: 12px;
@@ -18,14 +17,12 @@
     transition: transform 0.1s ease, background 0.2s ease;
     z-index: 9999;
 }
-
 /* Cursor hover effect for links */
 a:hover ~ .cursor,
 a:hover + .cursor {
     transform: translate(-50%, -50%) scale(1.8);
     background: rgba(61, 102, 148, 0.5);
 }
-
 /* Typography & Colors */
 body {
     font-family: 'Georgia', serif;
@@ -36,18 +33,15 @@ body {
     max-width: 1200px;
     margin: auto;
 }
-
 h1, h2 {
     margin-bottom: 0.75rem;
     color: #1D3C66;
     font-weight: 600;
 }
-
 h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
-
 h2 {
     font-size: 2rem;
     margin-top: 1.5rem;
@@ -55,7 +49,6 @@ h2 {
     width: 50%;
     padding-bottom: 0.25rem;
 }
-
 /* Links */
 a {
     color: #1e90ff;
@@ -63,55 +56,46 @@ a {
     font-weight: 500;
     transition: color 0.2s ease, text-decoration 0.2s ease;
 }
-
 a:hover {
     color: #104e8b;
     text-decoration: underline;
 }
-
 /* Header & Footer */
 header, footer {
     text-align: center;
     margin-bottom: 2rem;
 }
-
 footer {
     margin-top: 3rem;
     margin-bottom: 1rem;
     color: #7B8FA8;
     font-size: 0.9rem;
 }
-
 /* Navigation */
 nav {
     margin: 0.75rem 0;
     font-size: 0.9rem;
 }
-
 nav a {
     color: #7B8FA8;
     margin: 0 0.5rem;
 }
-
 /* Section Spacing */
 section {
     margin-top: 2rem;
 }
-
 /* Arrowed lists */
 .interests ul, .background ul, .currently ul,
 .arrow-list, .post-list {
     list-style: none;
     padding-left: 0;
 }
-
 .interests li, .background li, .currently li,
 .arrow-list li, .post-list li {
     margin-bottom: 0.5rem;
     padding-left: 2rem;
     position: relative;
 }
-
 .interests li::before, 
 .background li::before, 
 .currently li::before,
@@ -123,27 +107,26 @@ section {
     color: #7B8FA8;
     font-weight: normal;
 }
-
 /* Me section: */
 .me-section {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 3rem;
-    padding: 2rem 0;
+    margin-top: 0;
+    padding: 1rem 0;
+    min-height: 70vh;
 }
-
 .me-text {
     flex: 1;
+    max-width: 400px;
 }
-
 .me-image {
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 .profile-image {
     max-width: 400px;
     width: 100%;
@@ -152,17 +135,14 @@ section {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .profile-image:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
 }
-
 /* Sections (background, interests) */
 .background, .interests {
     display: block;
 }
-
 /* Responsive Design */
 @media (max-width: 1024px) {
     body {
@@ -170,28 +150,24 @@ section {
         padding: 1.5rem;
     }
 }
-
 @media (max-width: 768px) {
     .me-section {
         flex-direction: column;
         min-height: auto;
+        padding: 1.5rem 0;
     }
-
     .me-image {
         margin-top: 1.5rem;
         width: 100%;
     }
-
     .profile-image {
         max-width: 300px;
         margin: 0 auto;
     }
-
     h2 {
         width: 100%;
     }
 }
-
 @media (max-width: 600px) {
     body {
         padding: 1rem;
@@ -209,5 +185,9 @@ section {
     nav a {
         display: block;
         margin: 0.5rem 0;
+    }
+    
+    .me-section {
+        padding: 1rem 0;
     }
 }
