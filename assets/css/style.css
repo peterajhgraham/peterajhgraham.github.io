@@ -119,6 +119,22 @@ nav a {
     font-weight: normal;
 }
 
+/* Pictures & images */
+.currently-content {
+    display: flex;
+    align-items: center; /* vertically center image and text */
+    gap: 2rem; /* space between text and image */
+    flex-wrap: wrap; /* responsive: stacks on smaller screens */
+}
+
+.profile-image {
+    width: 200px; /* adjust size as needed */
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 /* Responsive design */
 @media (max-width: 600px) {
     body {
