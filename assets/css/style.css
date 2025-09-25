@@ -5,6 +5,7 @@
     box-sizing: border-box;
     cursor: none;
 }
+
 /* Custom cursor */
 .cursor {
     width: 12px;
@@ -17,39 +18,46 @@
     transition: transform 0.1s ease, background 0.2s ease;
     z-index: 9999;
 }
+
 /* Cursor hover effect for links */
 a:hover ~ .cursor,
 a:hover + .cursor {
     transform: translate(-50%, -50%) scale(1.8);
     background: rgba(61, 102, 148, 0.5);
 }
+
 /* Typography & Colors */
 body {
     font-family: 'Georgia', serif;
-    line-height: 1.6;
+    line-height: 1.55;
     color: #1D3C66;
     background: #E6F0FA;
-    padding: 3rem;
+    padding: 2rem;
     max-width: 900px;
     margin: auto;
 }
+
 h1, h2 {
     margin-bottom: 0.75rem;
     color: #1D3C66;
     font-weight: 600;
 }
+
 h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-h2 {
-    font-size: 2.2rem;
-    margin-top: 2rem;
-    border-bottom: 3px solid #7B8FA8;
-    width: 60%;
-    padding-bottom: 0.5rem;
+    font-size: 2.75rem;
     margin-bottom: 1.5rem;
+    text-align: center;
 }
+
+h2 {
+    font-size: 2rem;
+    margin-top: 1.5rem;
+    border-bottom: 3px solid #7B8FA8;
+    width: 55%;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
 /* Links */
 a {
     color: #1e90ff;
@@ -57,81 +65,87 @@ a {
     font-weight: 500;
     transition: color 0.2s ease, text-decoration 0.2s ease;
 }
+
 a:hover {
     color: #104e8b;
     text-decoration: underline;
 }
+
 /* Header & Footer */
 header, footer {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
+
 footer {
     margin-top: 3rem;
     margin-bottom: 1rem;
     color: #7B8FA8;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
+
 /* Navigation */
 nav {
-    margin: 0.75rem 0;
+    margin: 1rem 0;
     font-size: 0.9rem;
 }
+
 nav a {
     color: #7B8FA8;
     margin: 0 0.5rem;
 }
+
 /* Section Spacing */
-.background, .interests {
-    margin-top: 3rem;
+section {
+    margin-top: 2.5rem;
 }
+
 /* Arrowed lists */
-.interests ul, .background ul, .currently ul,
 .arrow-list, .post-list {
     list-style: none;
     padding-left: 0;
 }
-.interests li, .background li, .currently li,
+
 .arrow-list li, .post-list li {
-    margin-bottom: 0.8rem;
-    padding-left: 2.5rem;
+    margin-bottom: 0.65rem;
+    padding-left: 2rem;
     position: relative;
-    font-size: 1.05rem;
+    font-size: 1rem;
 }
-.interests li::before, 
-.background li::before, 
-.currently li::before,
-.arrow-list li::before,
-.post-list li::before {
+
+.arrow-list li::before, .post-list li::before {
     content: "→";
     position: absolute;
     left: 0;
     color: #7B8FA8;
     font-weight: normal;
 }
-/* Me section: */
+
+/* Me section */
 .me-section {
-    margin-top: 1.5rem;
-    margin-bottom: 0;
-}
-.me-text {
-    flex: 1;
+    display: flex;
+    align-items: center; /* vertically center relative to text */
+    justify-content: space-between;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
-.me-text h2 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+.me-text {
+    flex: 1;
 }
 
 .me-text .arrow-list {
     margin-top: 0.5rem;
 }
+
 .me-image {
     flex-shrink: 0;
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-end;
+    align-items: center; /* vertically center image */
+    justify-content: center; /* horizontally center image in its block */
 }
+
 .profile-image {
     max-width: 350px;
     width: 100%;
@@ -140,45 +154,47 @@ nav a {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .profile-image:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
 }
-/* Sections (background, interests) */
+
+/* Background & Interests */
 .background, .interests {
     display: block;
 }
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     body {
         max-width: 95%;
-        padding: 2rem;
+        padding: 1.5rem;
     }
 }
+
 @media (max-width: 768px) {
     .me-section {
         flex-direction: column;
-        margin-top: 1rem;
-        margin-bottom: 0;
-        gap: 2rem;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
     }
     
-    .me-text {
-        padding-top: 0;
-    }
     .me-image {
-        margin-top: 0;
         width: 100%;
-        justify-content: center;
     }
+    
     .profile-image {
         max-width: 300px;
         margin: 0 auto;
     }
+    
     h2 {
         width: 100%;
     }
 }
+
 @media (max-width: 600px) {
     body {
         padding: 1rem;
@@ -196,10 +212,5 @@ nav a {
     nav a {
         display: block;
         margin: 0.5rem 0;
-    }
-    
-    .me-section {
-        padding: 0;
-        margin-bottom: 0;
     }
 }
