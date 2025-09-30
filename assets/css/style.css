@@ -52,10 +52,9 @@ h1 {
 h2 {
     font-size: 2rem;
     margin-top: 1.5rem;
-    border-bottom: 3px solid #7B8FA8;
-    width: 55%;
-    padding-bottom: 0.5rem;
     margin-bottom: 1.25rem;
+    font-weight: 600;
+    color: #1D3C66;
 }
 
 /* Links */
