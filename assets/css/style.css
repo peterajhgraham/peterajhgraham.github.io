@@ -3,30 +3,33 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
 }
 
-/* Custom cursor */
-.cursor {
-    width: 12px;
-    height: 12px;
-    background: rgba(61, 102, 148, 0.8);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: transform 0.1s ease, background 0.2s ease;
-    z-index: 9999;
+/* Custom cursor - only enable on devices with fine pointers (desktops) */
+@media (pointer: fine) {
+    * {
+        cursor: none;
+    }
+    .cursor {
+        width: 12px;
+        height: 12px;
+        background: rgba(61, 102, 148, 0.8);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        transition: transform 0.1s ease, background 0.2s ease;
+        z-index: 1000;
+    }
+
+    a:hover ~ .cursor,
+    a:hover + .cursor {
+        transform: translate(-50%, -50%) scale(1.8);
+        background: rgba(61, 102, 148, 0.5);
+    }
 }
 
-/* Cursor hover effect for links */
-a:hover ~ .cursor,
-a:hover + .cursor {
-    transform: translate(-50%, -50%) scale(1.8);
-    background: rgba(61, 102, 148, 0.5);
-}
-
-/* Typography & Colors */
+/* Typography & Colors - Light Mode (default) */
 body {
     font-family: 'Georgia', serif;
     line-height: 1.55;
@@ -37,6 +40,12 @@ body {
     margin: auto;
 }
 
+/* Restrict text containers for readability */
+.me-text, .background, .interests {
+    max-width: 680px;
+}
+
+/* Headings */
 h1, h2 {
     margin-bottom: 0.75rem;
     color: #1D3C66;
@@ -53,21 +62,37 @@ h2 {
     font-size: 2rem;
     margin-top: 1.5rem;
     margin-bottom: 1.25rem;
-    font-weight: 600;
-    color: #1D3C66;
 }
 
-/* Links */
+/* Links - with animated underline */
 a {
     color: #1e90ff;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.2s ease, text-decoration 0.2s ease;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: #104e8b;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.25s ease;
 }
 
 a:hover {
     color: #104e8b;
-    text-decoration: underline;
+}
+
+a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
 }
 
 /* Header & Footer */
@@ -117,13 +142,12 @@ section {
     position: absolute;
     left: 0;
     color: #7B8FA8;
-    font-weight: normal;
 }
 
 /* Me section */
 .me-section {
     display: flex;
-    align-items: center; /* vertically center relative to text */
+    align-items: center;
     justify-content: space-between;
     gap: 2.5rem;
     margin-top: 2rem;
@@ -141,8 +165,8 @@ section {
 .me-image {
     flex-shrink: 0;
     display: flex;
-    align-items: center; /* vertically center image */
-    justify-content: center; /* horizontally center image in its block */
+    align-items: center;
+    justify-content: center;
 }
 
 .profile-image {
@@ -157,11 +181,6 @@ section {
 .profile-image:hover {
     transform: translateY(-4px) scale(1.02);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.25);
-}
-
-/* Background & Interests */
-.background, .interests {
-    display: block;
 }
 
 /* Responsive Design */
@@ -198,6 +217,7 @@ section {
     body {
         padding: 1rem;
         font-size: 0.9rem;
+        line-height: 1.65;
     }
     
     h1 {
@@ -211,5 +231,55 @@ section {
     nav a {
         display: block;
         margin: 0.5rem 0;
+    }
+}
+
+/* -------------------- */
+/* DARK MODE (Pastel)   */
+/* -------------------- */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #1B1F2A; /* deep muted navy */
+        color: #E6EAF2; /* soft off-white */
+    }
+
+    h1, h2 {
+        color: #F0C6D1; /* pastel pinkish */
+    }
+
+    a {
+        color: #9FD5FF; /* pastel sky blue */
+    }
+
+    a::after {
+        background: #72B7FF; /* softer underline */
+    }
+
+    a:hover {
+        color: #72B7FF;
+    }
+
+    footer {
+        color: #A3A8BD; /* muted gray-blue */
+    }
+
+    nav a {
+        color: #C9B6FF; /* pastel lavender */
+    }
+
+    .arrow-list li::before, .post-list li::before {
+        color: #8FBACF; /* pastel teal */
+    }
+
+    .profile-image {
+        box-shadow: 0 12px 24px rgba(240, 198, 209, 0.15);
+    }
+
+    .profile-image:hover {
+        box-shadow: 0 16px 32px rgba(159, 213, 255, 0.25);
+    }
+
+    .cursor {
+        background: rgba(159, 213, 255, 0.8);
     }
 }
