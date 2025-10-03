@@ -110,13 +110,18 @@ footer {
 
 /* Navigation */
 nav {
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    flex-wrap: wrap;          /* wrap if too many links */
+    gap: 1rem;
     margin: 1rem 0;
     font-size: 0.9rem;
 }
 
 nav a {
     color: #8AA1B8; /* muted pastel teal-gray */
-    margin: 0 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 /* Section Spacing */
@@ -194,7 +199,9 @@ section {
 @media (max-width: 768px) {
     .me-section {
         flex-direction: column;
-        gap: 1.5rem;
+        align-items: center;
+        text-align: center;
+        gap: 1.25rem;
         margin-top: 1.5rem;
         margin-bottom: 1rem;
     }
@@ -204,7 +211,7 @@ section {
     }
     
     .profile-image {
-        max-width: 300px;
+        max-width: 250px;
         margin: 0 auto;
     }
     
@@ -228,8 +235,13 @@ section {
         font-size: 1.5rem;
     }
     
+    /* Keep nav horizontal on mobile */
+    nav {
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
     nav a {
-        display: block;
-        margin: 0.5rem 0;
+        margin: 0;
     }
 }
